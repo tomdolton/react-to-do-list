@@ -5,25 +5,19 @@ export const ListsContext = createContext();
 
 const ListsContextProvider = (props) => {
 
-
-
-  const cleaning = {
-    title: "Cleaning",
-    items: ["Hoover", "Dusting", "Washing up"],
-    id: uuid()
-  }
-  const homework = {
-    title: "Homework",
-    items: ["Write", "Read", "Maths"],
+  const example = {
+    title: "Example to do list",
+    items: ["Create your own lists", "Cross off a list item by clicking it", "<--Delete a list item by clicking on the circle", "Add a new item to the list below..."],
     id: uuid()
   }
 
-  const [lists, setLists] = useState([cleaning, homework]);
+  const [lists, setLists] = useState(() => {
+    const localData = localStorage.getItem("lists");
+    return localData ? JSON.parse(localData) : [example]
+  });
   const [listsNumber, setListsNumber] = useState(lists.length);
-  const [shownList, setShownList] = useState(homework);
-  // const [listItems, setListItems] = useState([]);
-
-
+  const [shownList, setShownList] = useState(lists[0]);
+  const [isIncrease, setIsIncreased] = useState(true);
 
 
   function addListItem(newItem, listId) {
@@ -36,7 +30,6 @@ const ListsContextProvider = (props) => {
 
   }
 
-
   function removeListItem(item) {
     let alteredList = shownList;
     alteredList.items = alteredList.items.filter(i => i !== item);
@@ -46,15 +39,10 @@ const ListsContextProvider = (props) => {
     });
   }
 
-
   function showList(listId) {
     const foundList = lists.find(list => list.id === listId);
-    // if (lists.length === 1) { }
     setShownList(foundList);
   }
-
-
-  const [isIncrease, setIsIncreased] = useState(true);
 
   function addList(newList) {
     setIsIncreased(true);
@@ -65,13 +53,16 @@ const ListsContextProvider = (props) => {
   }
 
   function deleteList(listId) {
-    setIsIncreased(false);
-    const foundList = lists.find(list => list.id === listId);
-    // if (foundList === shownList) { showList(lists[0].id) };
-    setLists(prevValue => prevValue.filter(list => list !== foundList));
-    setListsNumber(prevValue => prevValue - 1);
+    let isConfirmed = window.confirm("Are you sure you want to delete this list?");
+    if (isConfirmed) {
+      setIsIncreased(false);
+      const foundList = lists.find(list => list.id === listId);
+      setLists(prevValue => prevValue.filter(list => list !== foundList));
+      setListsNumber(prevValue => prevValue - 1);
+    }
   }
 
+  // Changes shown list when lists are added or removed
   useEffect(() => {
     if (isIncrease) {
       // Sets shown list to last added list
@@ -86,8 +77,10 @@ const ListsContextProvider = (props) => {
     }
   }, [listsNumber]);
 
-
-
+  // Saves lists to local storage whenever lists is updated
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(lists));
+  }, [lists]);
 
 
   return (
