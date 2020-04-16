@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import "./AddList.css";
 import Button from '@material-ui/core/Button';
 import { ListsContext } from "../contexts/ListsContext";
 
@@ -21,16 +22,16 @@ function AddList(props) {
   }
 
   return (
-    <div class="add-list">
+    <div className="add-list">
       <form>
-        <label for="name">New list:</label>
+        {/* <label for="name">New list:</label> */}
         <input
           onChange={handleChange}
           value={inputText}
           id="name"
-          placeholder="List name">
+          placeholder="New list">
         </input>
-        <Button onClick={handleClick} variant="contained">Save</Button>
+        <Button type="submit" onClick={handleClick} variant="contained">Save</Button>
       </form>
     </div>
   )

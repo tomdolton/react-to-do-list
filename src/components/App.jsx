@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import Header from "./Header";
 import AddList from "./AddList";
 import List from "./List";
 import ListTable from "./ListTable";
-import ListsContextProvider, { ListsContext } from "../contexts/ListsContext";
+import "./App.css"
+import ListsContextProvider from "../contexts/ListsContext";
 
 
 function App() {
