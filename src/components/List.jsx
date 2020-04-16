@@ -57,16 +57,15 @@ function List(props) {
                 return (
                   <div className="list__item" key={uuid()} id={uuid()} onClick={handleListItemClick}>
                     <span className="list__checkbox" onClick={handleCheckbox} id={item} >
-                      <CheckIcon className="icon checkbox__icon" onClick={handleCheckbox} id={item} />
+                      <CheckIcon className="icon checkbox__icon" style={{ fontSize: 24 }} onClick={handleCheckbox} id={item} />
                     </span>
                     <li key={uuid()} id={uuid()} onClick={handleListItemClick}>{item}</li>
                   </div>)
               })}
             </ul>
             <div className="list__controls">
-              {/* <TextField onChange={handleChange} value={itemInputText} label="New list item"></TextField> */}
               <input className="list__input" onChange={handleChange} value={itemInputText} placeholder="New list item"></input>
-              <Button type="submit" onClick={handleClick} variant="contained">Add</Button>
+              <Button type="submit" onClick={handleClick} variant="outlined" >Add</Button>
             </div>
           </form>
         )

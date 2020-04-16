@@ -1,8 +1,9 @@
 /* Header____________________ */
 .header {
   background: var(--primary-clr);
-  text-align: center;
-  padding: 0.5em;
+  text-align: left;
+  padding: 0.5rem;
+  padding-left: 2rem;
 }
 
 .header h1 {
@@ -10,4 +11,11 @@
   font-size: 2rem;
   font-weight: 300;
   margin: 0.5rem 0;
+}
+
+/* 870px Breakpoint_______________________ */
+@media (max-width: 870px) {
+  .header {
+    text-align: center;
+  }
 }

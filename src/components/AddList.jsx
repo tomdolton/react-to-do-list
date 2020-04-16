@@ -31,7 +31,7 @@ function AddList(props) {
           id="name"
           placeholder="New list">
         </input>
-        <Button type="submit" onClick={handleClick} variant="contained">Save</Button>
+        <Button type="submit" onClick={handleClick} variant="outlined"  >Save</Button>
       </form>
     </div>
   )

@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Header";
-import AddList from "./AddList";
-import List from "./List";
-import ListTable from "./ListTable";
-import "./App.css"
-import ListsContextProvider from "../contexts/ListsContext";
+import Header from "./components/Header";
+import AddList from "./components/AddList";
+import List from "./components/List";
+import ListTable from "./components/ListTable";
+// import "./App.css"
+import ListsContextProvider from "./contexts/ListsContext";
 
 
 function App() {

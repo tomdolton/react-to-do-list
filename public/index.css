@@ -92,6 +92,7 @@ transform: translateY(-20px);
 
 .sidebar {
   width: 40%;
+  max-width: 600px;
   background: #f3f3f3;
   min-height: calc(100vh - 95px);
 }
@@ -101,5 +102,25 @@ transform: translateY(-20px);
 }
 
 form {
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
+}
+
+
+/* 870px Breakpoint_______________________ */
+@media (max-width: 870px) {
+/* Layout_______________________ */
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    min-height: inherit;
+    padding-bottom: 1rem
+  }
+
+  form {
+    padding-top: 3rem;
+  }
 }
