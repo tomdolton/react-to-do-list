@@ -3,11 +3,12 @@ import "./AddList.css";
 import Button from '@material-ui/core/Button';
 import { ListsContext } from "../contexts/ListsContext";
 
-function AddList(props) {
+function AddList() {
 
   const { addList } = useContext(ListsContext);
 
   const [inputText, setInputText] = useState("");
+
 
   function handleChange(e) {
     const value = e.target.value;
@@ -21,17 +22,17 @@ function AddList(props) {
     setInputText("");
   }
 
+
   return (
     <div className="add-list">
       <form>
-        {/* <label for="name">New list:</label> */}
         <input
           onChange={handleChange}
           value={inputText}
           id="name"
           placeholder="New list">
         </input>
-        <Button type="submit" onClick={handleClick} variant="outlined"  >Save</Button>
+        <Button type="submit" onClick={handleClick} variant="outlined">Save</Button>
       </form>
     </div>
   )

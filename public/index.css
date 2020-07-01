@@ -7,16 +7,12 @@
   --background-light: #fff;
   --background-mid: #dfe6e9;
   --background-mid-dark: #ddd;
-  --box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.18);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.18);
   --transition-all: all 250ms;
 }
 
-
-
 /* Open Sans font import from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
-
-
 
 /* Base Styles____________ */
 * {
@@ -38,15 +34,14 @@ li {
   margin: 1em 0;
 }
 
-label, input {
+label,
+input {
   display: block;
 }
 
 label {
   font-size: 1.25rem;
 }
-
-
 
 /* Inputs____________ */
 input {
@@ -79,11 +74,9 @@ input:focus {
 }
 
 input:focus::placeholder {
-font-size: 0.75rem;
-transform: translateY(-20px);
+  font-size: 0.75rem;
+  transform: translateY(-20px);
 }
-
-
 
 /* Layout_______________________ */
 .container {
@@ -105,10 +98,9 @@ form {
   padding: 4rem 2rem 2rem;
 }
 
-
 /* 870px Breakpoint_______________________ */
 @media (max-width: 870px) {
-/* Layout_______________________ */
+  /* Layout_______________________ */
   .container {
     flex-direction: column;
   }
@@ -117,7 +109,7 @@ form {
     width: 100%;
     max-width: none;
     min-height: inherit;
-    padding-bottom: 1rem
+    padding-bottom: 1rem;
   }
 
   form {

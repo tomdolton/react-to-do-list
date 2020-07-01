@@ -14,7 +14,6 @@
 .list form {
   background: white;
   width: 80%;
-  /* max-width: 800px; */
   text-align: center;
   margin: 0 auto;
 }
@@ -57,8 +56,6 @@
   top: 100%;
 }
 
-
-
 /* List Checkbox__________________ */
 .list__checkbox {
   border-radius: 50%;
@@ -83,7 +80,7 @@
 }
 
 .checkbox__icon path {
- pointer-events: none;
+  pointer-events: none;
 }
 
 .list__checkbox:hover {
@@ -96,8 +93,6 @@
   opacity: 1;
 }
 
-
-
 /* List Input Controls_______________ */
 .list__controls {
   display: flex;
@@ -106,8 +101,8 @@
 }
 
 .list__item--done li {
-text-decoration: line-through;
-opacity: 0.85;
+  text-decoration: line-through;
+  opacity: 0.85;
 }
 
 .list__item--done:hover li {
@@ -116,7 +111,6 @@ opacity: 0.85;
 
 /* 870px Breakpoint_______________________ */
 @media (max-width: 870px) {
-
   .list {
     width: 100%;
   }
@@ -126,5 +120,4 @@ opacity: 0.85;
     max-width: 500px;
     margin: 0 auto;
   }
-
 }

@@ -1,7 +1,7 @@
 /* Header____________________ */
 .header {
   background: var(--primary-clr);
-  text-align: left;
+  text-align: center;
   padding: 0.5rem;
   padding-left: 2rem;
 }
@@ -19,5 +19,4 @@
   .header {
     text-align: center;
   }
-  
 }

@@ -6,29 +6,31 @@ import { ListsContext } from "../contexts/ListsContext";
 import { v4 as uuid } from "uuid";
 
 
-function List(props) {
+function List() {
 
   const { shownList, addListItem, removeListItem } = useContext(ListsContext);
 
   const [itemInputText, setItemInputText] = useState("");
-  // function listInputChange(value) {
-  //   setItemInputText(value);
-  // }
 
+  // On input value change, update itemInputText state
   function handleChange(e) {
     const value = e.target.value;
     setItemInputText(value);
   }
 
+  // On submit button click
   function handleClick(e) {
     e.preventDefault();
     if (!itemInputText) return;
+    // Add the input value as an item to the current list
     addListItem(itemInputText, shownList.id);
     setItemInputText("");
   }
 
+  // On checkbox click
   function handleCheckbox(e) {
     e.preventDefault();
+    // Removes this list item from the list
     const value = e.target.id;
     removeListItem(value);
   }
@@ -44,6 +46,7 @@ function List(props) {
 
     element.classList.toggle('list__item--done');
   }
+
 
   return (
     <div className="list">
